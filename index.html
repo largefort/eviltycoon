@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idle Evil Tycoon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Idle Evil Tycoon</h1>
+        <div class="evil-points">
+            <h2>Evil Points: <span id="evilPoints">0</span></h2>
+        </div>
+        
+        <div class="schemes">
+            <h3>Evil Schemes</h3>
+            <div class="scheme" id="minions">
+                <h4>Hire Minions</h4>
+                <p>Cost: <span id="minionCost">10</span> Evil Points</p>
+                <button onclick="buyMinion()">Buy Minion</button>
+                <p>Minions: <span id="minionsOwned">0</span></p>
+                <p>Evil Points per second: <span id="minionEps">1</span></p>
+            </div>
+            <div class="scheme" id="villains">
+                <h4>Recruit Villains</h4>
+                <p>Cost: <span id="villainCost">50</span> Evil Points</p>
+                <button onclick="buyVillain()">Buy Villain</button>
+                <p>Villains: <span id="villainsOwned">0</span></p>
+                <p>Evil Points per second: <span id="villainEps">5</span></p>
+            </div>
+            <div class="scheme" id="demons">
+                <h4>Summon Demons</h4>
+                <p>Cost: <span id="demonCost">200</span> Evil Points</p>
+                <button onclick="buyDemon()">Summon Demon</button>
+                <p>Demons: <span id="demonsOwned">0</span></p>
+                <p>Evil Points per second: <span id="demonEps">20</span></p>
+            </div>
+            <div class="scheme" id="lairs">
+                <h4>Build Lairs</h4>
+                <p>Cost: <span id="lairCost">1000</span> Evil Points</p>
+                <button onclick="buyLair()">Build Lair</button>
+                <p>Lairs: <span id="lairsOwned">0</span></p>
+                <p>Evil Points per second: <span id="lairEps">50</span></p>
+            </div>
+        </div>
+
+        <div class="upgrades">
+            <h3>Upgrades</h3>
+            <div class="upgrade" id="minionUpgrade">
+                <h4>Upgrade Minions</h4>
+                <p>Cost: <span id="minionUpgradeCost">100</span> Evil Points</p>
+                <button onclick="buyMinionUpgrade()">Buy Upgrade</button>
+                <p>Effect: Minions produce 2x more Evil Points</p>
+            </div>
+        </div>
+
+        <div class="events">
+            <h3>Random Events</h3>
+            <p id="eventMessage">No events happening right now...</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
