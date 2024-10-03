@@ -19,19 +19,44 @@ let minionMultiplier = 1;
 
 let eventActive = false;
 
+// Utility function to format numbers with compact notation
+function formatNumber(num) {
+    if (num < 1e3) return num.toFixed(0);                          // Up to 1,000
+    else if (num < 1e6) return (num / 1e3).toFixed(1) + 'K';      // Thousands
+    else if (num < 1e9) return (num / 1e6).toFixed(1) + 'M';      // Millions
+    else if (num < 1e12) return (num / 1e9).toFixed(1) + 'B';     // Billions
+    else if (num < 1e15) return (num / 1e12).toFixed(1) + 'T';    // Trillions
+    else if (num < 1e18) return (num / 1e15).toFixed(1) + 'Q';    // Quadrillions
+    else if (num < 1e21) return (num / 1e18).toFixed(1) + 'Qa';   // Quintillions
+    else if (num < 1e24) return (num / 1e21).toFixed(1) + 'R';    // Sextillions
+    else if (num < 1e27) return (num / 1e24).toFixed(1) + 'S';    // Septillions
+    else if (num < 1e30) return (num / 1e27).toFixed(1) + 'Sp';   // Octillions
+    else if (num < 1e33) return (num / 1e30).toFixed(1) + 'O';    // Nonillions
+    else if (num < 1e36) return (num / 1e33).toFixed(1) + 'N';    // Decillions
+    else if (num < 1e39) return (num / 1e36).toFixed(1) + 'D';    // Undecillions
+    else if (num < 1e42) return (num / 1e39).toFixed(1) + 'U';    // Duodecillions
+    else if (num < 1e45) return (num / 1e42).toFixed(1) + 'T'     // Tredecillions
+    else if (num < 1e48) return (num / 1e45).toFixed(1) + 'Qu';   // Quattuordecillions
+    else if (num < 1e51) return (num / 1e48).toFixed(1) + 'Quin'; // Quindecillions
+    else if (num < 1e54) return (num / 1e51).toFixed(1) + 'Sx';   // Sexdecillions
+    else if (num < 1e57) return (num / 1e54).toFixed(1) + 'Se';    // Septendecillions
+    else if (num < 1e60) return (num / 1e57).toFixed(1) + 'O';     // Octodecillions
+    else return (num / 1e60).toFixed(1) + 'N';                     // Novemdecillions
+}
+
 function updateDisplay() {
-    document.getElementById('evilPoints').textContent = evilPoints.toFixed(0);
-    document.getElementById('minionsOwned').textContent = minionsOwned;
-    document.getElementById('villainsOwned').textContent = villainsOwned;
-    document.getElementById('demonsOwned').textContent = demonsOwned;
-    document.getElementById('lairsOwned').textContent = lairsOwned;
+    document.getElementById('evilPoints').textContent = formatNumber(evilPoints);
+    document.getElementById('minionsOwned').textContent = formatNumber(minionsOwned);
+    document.getElementById('villainsOwned').textContent = formatNumber(villainsOwned);
+    document.getElementById('demonsOwned').textContent = formatNumber(demonsOwned);
+    document.getElementById('lairsOwned').textContent = formatNumber(lairsOwned);
     
-    document.getElementById('minionCost').textContent = minionCost;
-    document.getElementById('villainCost').textContent = villainCost;
-    document.getElementById('demonCost').textContent = demonCost;
-    document.getElementById('lairCost').textContent = lairCost;
+    document.getElementById('minionCost').textContent = formatNumber(minionCost);
+    document.getElementById('villainCost').textContent = formatNumber(villainCost);
+    document.getElementById('demonCost').textContent = formatNumber(demonCost);
+    document.getElementById('lairCost').textContent = formatNumber(lairCost);
     
-    document.getElementById('minionUpgradeCost').textContent = minionUpgradeCost;
+    document.getElementById('minionUpgradeCost').textContent = formatNumber(minionUpgradeCost);
 }
 
 function buyMinion() {
