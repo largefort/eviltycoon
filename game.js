@@ -1,4 +1,4 @@
-let evilPoints = 0;
+let evilPoints = 10;
 let minionsOwned = 0;
 let villainsOwned = 0;
 let demonsOwned = 0;
